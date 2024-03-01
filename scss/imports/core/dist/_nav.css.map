@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["_nav.scss"],"sourcesContent":[".nav{\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    &__menu{\r\n        display: flex;\r\n        gap: 5rem;\r\n        align-items: center;\r\n        \r\n    }\r\n}"],"file":"_nav.css"}

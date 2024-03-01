@@ -1,0 +1,106 @@
+.homepage {
+    .hero {
+        position: relative;
+        &__carousel {
+            &-viewport {
+                .f-carousel__slide {
+                    a {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        aspect-ratio: 1600/927;
+                        overflow: hidden;
+                        img {
+                            @include midimg(100%);
+                        }
+                    }
+                }
+            }
+        }
+        &__bottom {
+            position: absolute;
+            bottom: 8.63%;
+            left: 0;
+            width: 100%;
+            &-content {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                height: 0;
+                .arrow {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2.2rem;
+                    align-items: center;
+                    height: max-content;
+                    pointer-events: none;
+                    @include transform(translateY(-100%));
+                    .text {
+                        @include text(1.4rem, utm-r, 2.2rem, $white-cl, none);
+                        letter-spacing: 0.64px;
+                        writing-mode: vertical-lr;
+                    }
+                    .icon {
+                        width: 1.9rem;
+                        height: 4.3rem;
+                    }
+                    @include animation(arrow $t $cubic infinite alternate);
+                    @include keyframes(arrow) {
+                        0% {
+                            @include transform(translateY(-100%));
+                        }
+                        20% {
+                            @include transform(translateY(-98%));
+                        }
+                        40% {
+                            @include transform(translateY(-96%));
+                        }
+                        60% {
+                            @include transform(translateY(-94%));
+                        }
+                        80% {
+                            @include transform(translateY(-92%));
+                        }
+                        100% {
+                            @include transform(translateY(-90%));
+                        }
+                    }
+                }
+                .paging {
+                    height: max-content;
+                    @include transform(translateY(-100%));
+                    pointer-events: none;
+                    .current {
+                        @include text(7.4rem, din-b, 5.7rem, $white-cl, uppercase);
+                        letter-spacing: 0.64px;
+                    }
+                    .total {
+                        @include text(4.84rem, din-b, 3.6rem, $white-cl, uppercase);
+                        letter-spacing: 0.64px;
+                        opacity: 40%;
+                    }
+                }
+            }
+        }
+        @include sm {
+            &__bottom {
+                &-content {
+                    justify-content: flex-end;
+                    .arrow {
+                        display: none;
+                    }
+                    .paging {
+                        .current {
+                            font-size: 2.2rem;
+                            line-height: 2.6rem;
+                        }
+                        .total {
+                            font-size: 1.8rem;
+                            line-height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 3.6rem 4.8rem;
+  z-index: var(--z-fixed);
+}
+
+/*# sourceMappingURL=_header.css.map */

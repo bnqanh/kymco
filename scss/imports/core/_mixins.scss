@@ -131,7 +131,13 @@
 	color: $color;
 	text-transform: $text-transform;
 }
-
+@mixin boxshadow($args) {
+	box-shadow: $args;
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	-ms-box-shadow: $args;
+	-o-box-shadow: $args;
+}
 @mixin mid($flex: false) {
 	@if $flex == false {
 		top: 50%;

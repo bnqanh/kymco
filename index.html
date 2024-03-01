@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>GBOX Home</title>
-    <link rel="icon" href="gboxicon.ico">
-    <meta name="title" content="Welcome to GBOX Studios" />
+    <title>KYMCO Home</title>
+    <link rel="icon" href="kymco_icon.ico">
+    <meta name="title" content="Welcome to KYMCO" />
     <meta name="description" content="" />
 
     <!-- meta facebook -->
     <meta property="og:locale" content="vi" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Welcome to GBOX Studios" />
+    <meta property="og:title" content="Welcome to KYMCO" />
     <meta property="og:description"
         content="GBOX STUDIOS aim is to create a full service offering clients the highest quality of work with a comprehensive understanding of modern production, our services include advertising, products, automotive, portraits, beauty, editorial photography and video production. Gbox brand mark was inspired by the brand name and the lens – a visual representation of our world, we aim to create powerful simplicity, all components are coherence based on a box. Gbox is based in Ho Chi Minh City, one of the most beautiful city in Vietnam." />
     <meta property="og:url" content="https://bnqanh.github.io/gbox/" />
@@ -21,28 +21,373 @@
     <meta property="og:image" content="https://bnqanh.github.io/gbox/img/meta_img.jpg" />
     <meta property="og:image:width" content="1440" />
     <meta property="og:image:height" content="800" />
-
+    <link rel="stylesheet" href="fancyapps/carousel.css">
     <link rel="stylesheet" href="dest/style.min.css">
     <link rel="stylesheet" href="dest/fonts.css">
 </head>
 
 
 <body class="homepage">
+    <!-- overlay -->
+    <div class="overlay" id="overlay"></div>
     <!-- HEADER -->
-    <header>
-
+    <header class="header" id="header">
+        <div class="container-fluid">
+            <nav class="nav">
+                <a href="./" class="nav__logo">
+                    <img src="./img/kymco_logo.png" alt="" class="nav__logo-img">
+                </a>
+                <ul class="nav__menu" id="menu">
+                    <li class="nav__menu-item"><a href="product.html">sản phẩm</a></li>
+                    <li class="nav__menu-item"><a href="noodoe.html">công nghệ</a></li>
+                    <li class="nav__menu-item"><a href="services.html">dịch vụ</a></li>
+                    <li class="nav__menu-item"><a href="news.html">tin tức</a></li>
+                </ul>
+                <div class="nav__right">
+                    <div class="nav__right-search">
+                        <div class="icon" id="show-header-lookup">
+                            <svg class="icon__svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <form action="" class="search_form" id="header-lookup">
+                            <input type="text" class="input" placeholder="nhập sản phẩm..">
+                            <button type="submit" class="submit">
+                                <svg class="submit__svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="button --register w100" id="dai-ly">
+                        <span class="button__text">đại lý</span>
+                        <svg class="button__icon" fill="#000000" width="800px" height="800px" viewBox="0 0 32 32"
+                            version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 5l-12 12v11h24v-11l-12-12zM24 24h-16v-4h16v4z"></path>
+                        </svg>
+                    </div>
+                    <div class="button --register w230" id="dang-ky">
+                        <span class="button__text">đăng ký khách hàng</span>
+                        <svg class="button__icon" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 21C4 17.134 7.13401 14 11 14C11.3395 14 11.6734 14.0242 12 14.0709M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7ZM12.5898 21L14.6148 20.595C14.7914 20.5597 14.8797 20.542 14.962 20.5097C15.0351 20.4811 15.1045 20.4439 15.1689 20.399C15.2414 20.3484 15.3051 20.2848 15.4324 20.1574L19.5898 16C20.1421 15.4477 20.1421 14.5523 19.5898 14C19.0376 13.4477 18.1421 13.4477 17.5898 14L13.4324 18.1574C13.3051 18.2848 13.2414 18.3484 13.1908 18.421C13.1459 18.4853 13.1088 18.5548 13.0801 18.6279C13.0478 18.7102 13.0302 18.7985 12.9948 18.975L12.5898 21Z"
+                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="burger-btn" id="burger-btn">
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+        <div class="nav_mobi" id="nav-mobi">
+            <div class="container-fluid" id="mobi-menu">
+                <div class="nav_mobi__logo">
+                    <a href="./" class="nav_mobi__logo-img">
+                        <img src="./img/kymco_logo.png" alt="kymco">
+                    </a>
+                </div>
+                <div class="nav_mobi__store">
+                    <a href="stores.html">đại lý</a>
+                </div>
+                <div class="nav_mobi__register">
+                    <a href="register.html">đăng ký khách hàng</a>
+                </div>
+                <div class="nav_mobi__form">
+                    <form action="" class="search_form">
+                        <input type="text" class="input" placeholder="nhập sản phẩm..">
+                        <button type="submit" class="submit">
+                            <svg class="submit__svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- MAIN -->
     <main class="mainwrapper">
-        <section class="home">
+        <!-- hero section -->
+        <section class="hero">
+            <div class="hero__carousel f-carousel" id="hero-carousel">
+                <div class="hero__carousel-viewport f-carousel__viewport">
+                    <div class="f-carousel__slide">
+                        <a href="product.html">
+                            <img src="./img/hero_slider01.jpg" alt="pipe 125">
+                        </a>
+                    </div>
+                    <div class="f-carousel__slide">
+                        <a href="product.html">
+                            <img src="./img/hero_slider02.jpg" alt="pipe 125">
+                        </a>
+                    </div>
+                    <div class="f-carousel__slide">
+                        <a href="product.html">
+                            <img src="./img/hero_slider03.jpg" alt="pipe 125">
+                        </a>
+                    </div>
+                    <div class="f-carousel__slide">
+                        <a href="product.html">
+                            <img src="./img/hero_slider04.jpg" alt="pipe 125">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__bottom">
+                <div class="hero__bottom-content container-fluid">
+                    <div class="arrow">
+                        <span class="text">Kéo xuống</span>
+                        <img class="icon" src="./img/hero_arrow-icon.png" alt="kéo xuống">
+                    </div>
+                    <div class="paging">
+                        <span class="current" id="hero-carousel-index">1&nbsp;/&nbsp;</span>
+                        <span class="total" id="hero-carousel-count">0</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- mission section -->
+        <section class="mission">
+            <div class="container">
+                <div class="mission__content">
+                    <div class="mission__content-scripts">
+                        <div class="item">
+                            <h2 class="title --main">sứ mệnh của kymco</h2>
+                            <h3 class="text --main">
+                                <p>Trong suốt hơn năm thập kỷ qua, KYMCO không quên sứ mệnh tạo ra các phương tiện cá
+                                    nhân
+                                    tiện lợi và hữu ích trong cuộc sống, từ đó giành được trái tim của người tiêu dùng
+                                    trên
+                                    toàn thế giới, trong đó có Việt Nam.</p>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="mission__content-slider">
+                        <img src="./img/mission_slider01.jpg" alt="sứ mệnh của kymco" class="image">
+                    </div>
+                    <div class="mission__content-buttons buttons --divide">
+                        <div class="button --prev"></div>
+                        <div class="button --next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hot product section -->
+        <section class="hot">
+            <div class="container">
+                <div class="hot__title text_group">
+                    <h2 class="title --main">Sản phẩm hot</h2>
+                    <h3 class="text --main">
+                        <p>Khám phá dòng xe được yêu thích nhất luôn nằm trong top bán chạy</p>
+                    </h3>
+                </div>
+                <div class="hot__slider">
+                    <div class="hot__slider-item">
+                        <div class="product_card">
+                            <div class="product_card__text">
+                                <h3 class="product_card__text-name">
+                                    like<br>
+                                    <span class="number">50</span>
+                                </h3>
+                                <a href="product_details.html" class="button --main">
+                                    <span>xem chi tiết</span>
+                                </a>
+                            </div>
+                            <a href="product_details.html" class="product_card__image">
+                                <img src="./img/hot_slider01.jpg" alt="like 50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hot__slider-item">
+                        <div class="product_card">
+                            <div class="product_card__text">
+                                <h3 class="product_card__text-name">
+                                    k-pipe<br>
+                                    <span class="number">125</span>
+                                </h3>
+                                <a href="product_details.html" class="button --main">
+                                    <span>xem chi tiết</span>
+                                </a>
+                            </div>
+                            <a href="product_details.html" class="product_card__image">
+                                <img src="./img/hot_slider02.jpg" alt="k-pipe 125">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hot__slider-item">
+                        <div class="product_card">
+                            <div class="product_card__text">
+                                <h3 class="product_card__text-name">
+                                    candy<br>
+                                    <span class="number">50</span>
+                                </h3>
+                                <a href="product_details.html" class="button --main">
+                                    <span>xem chi tiết</span>
+                                </a>
+                            </div>
+                            <a href="product_details.html" class="product_card__image">
+                                <img src="./img/hot_slider03.jpg" alt="candy 50">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="product.html" class="button --main">
+                    <span>xem thêm sản phẩm khác</span>
+                </a>
+            </div>
+        </section>
+        <!-- tools section -->
+        <section class="tools">
+            <div class="tools__bg">
+                <img src="./img/tools_bg.jpg" alt="chọn xe theo cá tính" class="tools__bg-img">
+            </div>
+            <div class="container">
+                <div class="tools__content text_group">
+                    <h2 class="title --main">chọn xe
+                        theo cá tính</h2>
+                    <h3 class="text --main">
+                        <p>Xe bên bạn mang đậm chất riêng</p>
+                    </h3>
+                </div>
+                <a href=".choose.html" class="button --main">
+                    <span>Chọn xe dành riêng cho bạn!</span>
+                </a>
+            </div>
+        </section>
+        <!-- news section -->
+        <section class="news">
+            <div class="container">
+                <div class="text__group">
+                    <h2 class="title --main">Tin tức</h2>
+                    <h3 class="text --main">
+                        <p>Tổng hợp tin tức mới nhất từ KYMCO Việt Nam & quốc tế</p>
+                    </h3>
+                </div>
+                <div class="news__wrapper wrapper">
+                    <div class="news__card">
+                        <a href="news_detail.html" class="news__card-image">
+                            <img src="./img/news01.jpg" alt="discover your dream bike">
+                        </a>
+                        <div class="news__card-info">
+                            <h4 class="subtitle">experience the range to believe it</h3>
+                                <h3 class="title">discover your dream bike</h3>
+                        </div>
+                        <a href="news_detail.html" class="news__card-link">Xem chi tiết</a>
+                    </div>
+                    <div class="news__card">
+                        <a href="news_detail.html" class="news__card-image">
+                            <img src="./img/news02.jpg" alt="discover your dream bike">
+                        </a>
+                        <div class="news__card-info">
+                            <h3 class="title">extend your 2-years limited warranty</h3>
+                            <p class="desc">Until March 20, 2020</p>
+                        </div>
+                        <a href="news_detail.html" class="news__card-link">Xem chi tiết</a>
+                    </div>
+                    <div class="news__card">
+                        <a href="news_detail.html" class="news__card-image">
+                            <img src="./img/news03.jpg" alt="discover your dream bike">
+                        </a>
+                        <div class="news__card-info">
+                            <h3 class="title">new game for your bike this year</h3>
+                            <p class="desc">Roll into Milwaukee Labor Day Weekend 2018 and join thecelebration. No
+                                matter what Roll into Milwaukee Labor Day Weekend 2018 and join thecelebration. No
+                                matter what</p>
+                        </div>
+                        <a href="news_detail.html" class="news__card-link">Xem chi tiết</a>
+                    </div>
+                </div>
+                <a href="news.html" class="button --main"><span>xem thêm tin tức khác</span></a>
+            </div>
+        </section>
+        <!-- network section -->
+        <section class="network">
+            <div class="network__bg">
+                <img src="./img/network_bg.jpg" alt="kymco network" class="network__bg-img">
+            </div>
+            <div class="container">
+                <div class="text__group">
+                    <h2 class="title --main">kymco network</h2>
+                    <h3 class="text --main">
+                        <p>Mạng lưới KYMCO trên toàn thế giới</p>
+                    </h3>
+                </div>
+                <a href="network.html" class="button --main">tìm hiểu thêm</a>
+            </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer__title">Kymco vietnam</h3>
+            <div class="footer__social">
+                <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                    <svg width="800px" height="800px" viewBox="-5 0 20 20" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)"
+                                fill="#000000">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path
+                                        d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
+                                        id="facebook-[#176]">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="footer__social-link">
+                    <svg width="800px" height="800px" viewBox="0 -3 20 20" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)"
+                                fill="#000000">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path
+                                        d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
+                                        id="youtube-[#168]">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__nav-menu">
+                    <li class="item"><a href="about.html">về kymco</a></li>
+                    <li class="item"><a href="careers.html">tuyển dụng</a></li>
+                    <li class="item"><a href="contact.html">liên hệ</a></li>
+                    <li class="item"><a href="network.html">kymco network</a></li>
+                </ul>
+            </nav>
+            <div class="footer__logo">
+                <img src="./img/kymco_logo.png" alt="kymco" class="footer__logo-img">
+            </div>
+            <div class="footer__copy">
+                <p class="footer__copy-text">KWANG YANG VIỆT NAM &copy; 2018, All Rights Reserved</p>
+            </div>
+        </div>
     </footer>
     <script type="text/javascript" src="js/libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.slicknav.min.js"></script>
+    <script text="text/javascript" src="js/libs/carousel.umd.js"></script>
     <script type="text/javascript" src="dest/dist/main.min.js"></script>
 
 </body>

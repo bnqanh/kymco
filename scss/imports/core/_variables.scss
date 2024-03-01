@@ -1,7 +1,7 @@
 //======================================================BOXED LAYOUT=======================================================
 
 $container-max-width: 100%;
-$container-width: 101rem; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
+$container-width: 121.8rem; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
 
 /*GRID - media queries breakpoints*/
 $xxs-min: 36em; //576px; // CÓ THỂ TÙY CHỈNH
@@ -22,7 +22,8 @@ $white-cl: #fff;
 $black-cl: #000;
 $red-cl: #d81f1f;
 $blue-cl: #00afab;
-
+$btn-bg: #f4352c;
+$border-gray: #d8d8d8;
 $gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
 
 // timing transition - tuỳ chỉnh
@@ -50,7 +51,7 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
 
     // Genaral Variable
 
-    --gap: 3rem; // gap này sử dụng cho gap cột & padding của container, container-fluid
+    --gap: 4.8rem; // gap này sử dụng cho gap cột & padding của container, container-fluid
 
     --height-header: 14rem;
     --z-fixed: 100;
@@ -58,7 +59,8 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
 
     @media (max-width: $sm-max) {
         // Tablet
-        --height-header: 6rem;
+        --gap: 2rem;
+        --height-header: 4.4rem;
     }
     @media (max-width: $xs-max) {
         // Mobile

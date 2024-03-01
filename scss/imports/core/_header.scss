@@ -1,1 +1,75 @@
-
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--height-header);
+    background: transparent;
+    // padding-left: 4.8rem;
+    // padding-right: 4.8rem;
+    z-index: var(--z-fixed);
+    .nav_mobi {
+        background: $btn-bg;
+        z-index: var(--z-fixed);
+        overflow: scroll;
+        @include fullscreen(true);
+        @include visible(0);
+        @include transform(scaleY(0));
+        @include transform-origin(center top);
+        @include transition($t $cubic);
+        &.active {
+            @include visible(1);
+            @include transform(scaleY(1));
+            @include transform-origin(center top);
+            @include transition($t $cubic);
+        }
+        a {
+            @include text(2.4rem, sfu-r, 3.2rem, $white-cl, uppercase);
+            letter-spacing: -0.4px;
+        }
+        .container-fluid {
+            display: grid;
+            text-align: center;
+            div:not(:last-child) {
+                border-bottom: 2px solid $white-cl;
+            }
+        }
+        &__logo {
+            width: 100%;
+            height: var(--height-header);
+            order: -1;
+            @include mid(true);
+            &-img {
+                display: block;
+                position: relative;
+                width: 12.8rem;
+                padding-top: 2.2rem;
+                overflow: hidden;
+                img {
+                    @include midimg(100%);
+                }
+            }
+        }
+        &__store,
+        &__register {
+            padding-block: 1.2rem 0.6rem;
+        }
+        &__form {
+            padding-block: 2.4rem;
+            @include mid(true);
+        }
+        .slicknav {
+            &_menu {
+                padding-block: 2rem;
+            }
+            &_nav {
+                display: grid;
+                gap: 1rem;
+            }
+        }
+    }
+    @include sm {
+    }
+}

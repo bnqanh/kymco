@@ -1,0 +1,13 @@
+.homepage .hero {
+  position: relative;
+}
+
+.homepage .hero__carousel-viewport .f-carousel__slide a {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1600/927;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=_home.css.map */

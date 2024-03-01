@@ -1,0 +1,178 @@
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &__logo {
+        display: block;
+        position: relative;
+        width: 17.5rem;
+        height: 3rem;
+        overflow: hidden;
+        &-img {
+            @include midimg(100%);
+        }
+    }
+    &__menu {
+        @include mid(true);
+        column-gap: 5rem;
+        @include mid();
+        letter-spacing: 0.64px;
+        &-item {
+            a {
+                @include text(1.6rem, utm-r, 3rem, $white-cl, uppercase);
+            }
+        }
+    }
+    .burger-btn {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 2.2rem;
+        height: 1.6rem;
+        cursor: pointer;
+        z-index: calc(var(--z-fixed) + 10);
+        @include transform(translateY(-50%));
+        @include visible(0);
+        span,
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $white-cl;
+            @include boxshadow(2px 2px 1px 0px rgba(0, 0, 0, 0.35));
+            @include transition($t $cubic);
+        }
+        span {
+            @include mid;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            bottom: 0;
+            left: 0;
+        }
+        &.active {
+            span {
+                @include transform(scale(0));
+                @include transition($t $cubic);
+            }
+            &::before,
+            &::after {
+                @include mid;
+                @include transform-origin(center center);
+                @include boxshadow(0 0 0 0 rgba(0, 0, 0, 0));
+                @include transition($t $cubic);
+            }
+            &::before {
+                @include transform(translate(-50%, -50%) rotate(225deg));
+            }
+            &::after {
+                @include transform(translate(-50%, -50%) rotate(-225deg));
+            }
+        }
+        &::selection {
+            background-color: transparent;
+        }
+        * {
+            &::selection {
+                background-color: transparent;
+            }
+        }
+    }
+    &__right {
+        display: flex;
+        gap: 1rem;
+        &-search {
+            position: relative;
+            .icon {
+                position: relative;
+                width: 2.9rem;
+                height: 2.8rem;
+                overflow: hidden;
+                margin-right: 1rem;
+                &__svg {
+                    @include midimg(100%);
+                    path {
+                        stroke: $white-cl;
+                    }
+                }
+            }
+            .search_form {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: transparent;
+                @include visible(0);
+                &.show {
+                    @include visible(1);
+                    @include animation(jackInTheBox 1s $cubic both);
+                    @include keyframes(jackInTheBox) {
+                        from {
+                            @include visible(0);
+                            @include transform(scale(0.1) rotate(30deg));
+                            @include transform-origin(center bottom);
+                        }
+                        50% {
+                            @include transform(rotate(-10deg));
+                        }
+
+                        70% {
+                            @include transform(rotate(3deg));
+                        }
+                        to {
+                            @include visible(1);
+                            @include transform(scale(1));
+                        }
+                    }
+                }
+            }
+        }
+        .button {
+            &__icon {
+                display: none;
+                width: 2.9rem;
+                height: 2.8rem;
+                path {
+                    fill: $white-cl;
+                    stroke: $white-cl;
+                }
+            }
+        }
+    }
+    @include lg {
+        &__menu {
+            position: initial;
+            flex-wrap: wrap;
+            @include transform(translate(0, 0));
+        }
+    }
+    @include md {
+        &__right {
+            .button {
+                width: max-content;
+                background: transparent;
+                border: none;
+                &__text {
+                    display: none;
+                }
+                &__icon {
+                    display: block;
+                }
+            }
+        }
+    }
+    @include sm {
+        &__right,
+        &__menu {
+            display: none;
+        }
+        .burger-btn {
+            @include visible(1);
+        }
+    }
+}

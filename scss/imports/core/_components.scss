@@ -27,3 +27,61 @@ a {
     color: $blue-cl;
 }
 
+.search_form {
+    position: relative;
+    height: 3.3rem;
+    width: 26.9rem;
+    .input {
+        width: 100%;
+        height: 100%;
+        background: $white-cl;
+        border: 1px solid $white-cl;
+        border-radius: 1.65rem;
+        outline: none;
+        @include text(1.6rem, utm-r, 2rem, $black-cl, none);
+        letter-spacing: 0;
+        padding: 1.15rem 5.5rem 1.15rem 1.3rem;
+    }
+    .submit {
+        position: absolute;
+        right: 1.3rem;
+        top: 50%;
+        @include transform(translateY(-50%));
+        width: 2.9rem;
+        height: 2.8rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        overflow: hidden;
+        &__svg {
+            @include midimg(100%);
+            path {
+                stroke: $btn-bg;
+            }
+        }
+    }
+}
+.button {
+    @include mid(true);
+    background-color: $btn-bg;
+    border: 1px solid $btn-bg;
+    letter-spacing: 0.64px;
+    text-align: center;
+    &.--main {
+        width: 35.4rem;
+        height: 6.2rem;
+        border-radius: 3.1rem;
+        @include text(2.5rem, sfu-r, 4rem, $white-cl, uppercase);
+    }
+    &.--register {
+        width: fit-content;
+        height: 2.7rem;
+        @include text(1.6rem, utm-r, 2.137rem, $white-cl, uppercase);
+    }
+    &.w100 {
+        width: 10rem;
+    }
+    &.w230 {
+        width: 23rem;
+    }
+}
